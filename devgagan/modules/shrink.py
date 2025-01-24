@@ -73,9 +73,9 @@ async def token_handler(client, message):
     msg = await app.get_messages(chat_id, 796)
     user_id = message.chat.id
     if len(message.command) <= 1:
-        image_url = "https://i.postimg.cc/v8q8kGyz/startimg-1.jpg"
-        join_button = InlineKeyboardButton("Join Channel", url="https://t.me/team_spy_pro")
-        premium = InlineKeyboardButton("Get Premium", url="https://t.me/kingofpatal")   
+        image_url = "https://telegra.ph/file/0c3c0a72ca2785c0cf910.jpg"
+        join_button = InlineKeyboardButton("Join Channel", url="https://t.me/WarriorUnitsBots")
+        premium = InlineKeyboardButton("Get Premium", url="https://t.me/oo7jatji")   
         keyboard = InlineKeyboardMarkup([
             [join_button],   
             [premium]    
@@ -106,10 +106,10 @@ async def token_handler(client, message):
                 "user_id": user_id,
                 "param": param,
                 "created_at": datetime.utcnow(),
-                "expires_at": datetime.utcnow() + timedelta(hours=3),
+                "expires_at": datetime.utcnow() + timedelta(hours=0.5),
             })
             del Param[user_id]   
-            await message.reply("✅ You have been verified successfully! Enjoy your session for next 3 hours.")
+            await message.reply("✅ You have been verified successfully! Enjoy your session for next 30 Minuts.")
             return
         else:
             await message.reply("❌ Invalid or expired verification link. Please generate a new token.")
@@ -143,5 +143,5 @@ async def smart_handler(client, message):
         button = InlineKeyboardMarkup(
             [[InlineKeyboardButton("Verify the token now...", url=shortened_url)]]
         )
-        await message.reply("Click the button below to verify your free access token: \n\n> What will you get ? \n1. No time bound upto 3 hours \n2. Batch command limit will be FreeLimit + 20 \n3. All functions unlocked", reply_markup=button)
+        await message.reply("Click the button below to verify your free access token: \n\n> What will you get ? \n1. No time bound upto 30 minuts \n2. Batch command limit will be FreeLimit + 5 \n3. All functions unlocked", reply_markup=button)
  
